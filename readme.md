@@ -27,7 +27,7 @@ for backwards compatibility.
 
 - The file-path in the program needs to be changed to reflect the user's file-path and name. 
 See the code for more precise instructions on usage. However, here is what it looks like, where 
-the first parameter of the open argument should be file-path with appropriate file-name. 
+the first parameter of the open argument should be file-path with appropriate file-name: 
 
     - ```python 
        with open('5-Hopkins_clinical_panel_submission_template_testfile.csv', 'r') as my_csv_file:
