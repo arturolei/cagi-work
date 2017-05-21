@@ -1,5 +1,6 @@
 
 # Validations for 5-Hopkins Clinical Panel
+#### Version 1.0, May 19, 2017
 
 I have prepared the following documentation to provide a gloss or better elucidate the
 code that I have produced. 
@@ -14,8 +15,8 @@ code that I have produced.
 -This readme file written in markdown. 
 -Jupyter Notebook files; I have included these for the sake historical curiosity and 
 
-NB: Although this repository on Github is public (and visible to anyone who knows my github address), the data
-in the test files that I have created has all be fabricated by me. 
+*NB: Although this repository on Github is public (and visible to anyone who knows my github address), the data
+in the test files that I have created has all been fabricated by me and does not represent persons living or dead.* 
 
 
 ## Notes for Use/Instructions:
@@ -44,6 +45,11 @@ found in the code.
 - I interpreted the directive, "Please create a submission template with just 
 one comment field per individual, rather than one comment field for every individual-to-disorder class match," as meaning that there should be one C field per individual (thus one C field per row of the csv table). 
 
+- The program be case insensitive and should accept "N/A" and "n/a".
+
+- ***IMPORTANT*** For the variant data field for each disorder, each variant must be entered seperated ***BY A SPACE*** not 
+a comma. This change was necessitated by the way the program in Python was written. 
+
 
 ### Justification For Use of .csv instead of .txt:
 As this is a substantial change withr respect to precedent, some justification and clarification for 
@@ -54,3 +60,6 @@ CSV files can be opened, edited, and saved using MS Excel and other common sprea
 
 Lastly, I have included a file designated "csv-generator.py" which will convert a .txt file into a .csv file.
 Worst case scenario: we will have an intermediary program to convert .txt to .csv. 
+
+### Future Changes and Features:
+The program could be overhauled so that one inputs the file path as the input for a function. As it stands, users will still have to alter code individually. This could be problematic. 
