@@ -19,6 +19,7 @@ In sets of 3:
 
 import csv
 import re
+import time
 
 '''
 INSTRUCTIONS:
@@ -27,7 +28,7 @@ Write the appropriate file path for the first parameter.
 NB: The default path is a "test file".
 
 '''
-with open('5-Hopkins_clinical_panel_submission_template_testfile.csv', 'r') as my_csv_file:
+with open('5-Hopkins_clinical_panel_submission_template.csv', 'r') as my_csv_file:
     dic_patients_list = [item for item in csv.DictReader(my_csv_file)]
 
 #The following creates a list of dictionaries whose entries are the columns, e.g. patient #, 1-P, 2-P. 
@@ -41,7 +42,7 @@ error_list=[]
 #Test to insure that the csv file has the proper dimensions. 
 
 #Correct Dimensions
-length_patients_dict = 3 #Based on CAGI-4 data.
+length_patients_dict = 106 #Based on CAGI-4 data.
 num_col_standard= 44
 '''
 NB: 
@@ -53,11 +54,28 @@ misaligned_dict = False
 #Check each row to make sure each row has correct number of elements. 
 for patient_row in patients_dict_list:
     if len(patient_row) != num_col_standard:
+        print('oops')
         misaligned_dict = True
+
+#Check to make sure that a blank form or a form with "*" has not been entered.
+test_blank =[]
+for patient_row in patients_dict_list:
+    temp_list =[]
+    for patient_val in patient_row.keys():
+        if patient_val != 'patient':
+            temp_list.append(patient_row[patient_val])
+    test_blank.append(temp_list)
+
+blank = True
+for test_list in test_blank:
+    for test_item in test_list:
+        if test_item !='*':
+            blank = False
 
 if (len(patients_dict_list) != length_patients_dict) or misaligned_dict == True:
     error_list.append("ERROR: The number of lines do not match the template/dimension mis-match. \nPlease try again.")
-
+if blank == True:
+     error_list.append("ERROR: Form is blank. \nPlease try again.")
 else:
     #Test to see if there are empty values in the table.
     for patient_row in patients_dict_list:
@@ -255,10 +273,19 @@ else:
 #If there are errors. An error log is created (printed in console and put into a txt file)
 if len (error_list) >0:
     print('VALIDATION FAILED WITH ERRORS:', '\n')
-    for item in error_list:
-        print(item)
+    for error in error_list:
+        print(error)
+    with open('cagi5_validation_errors.txt','w') as error_file:
+        for error in error_list:
+            error_file.write(error + '\n')
+            
 else:
     #if there are no errors. A .txt file attesting to validation is created. Message also sent to console.
     print("Validation passed with no errors.")
+    
+    with open('cagi5_validation_passed.txt','w') as validation_file:
+        validation_file.write('Validation passed with no errors.' + '\n')
+        validation_file.write('Time and Date: '+ time.strftime('%Y%m%d-%H%M%S'))
+    
     
     
