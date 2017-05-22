@@ -41,6 +41,9 @@ the first parameter of the open argument should be file-path with appropriate fi
 - The program validates a .csv file. 
     - See the subsequent section "Justification for use of .csv Instead of .txt"
     
+- ***IMPORTANT*** For the variant data field for each disorder, each variant must be entered seperated ***BY A SPACE*** not 
+a comma. This change was necessitated by the way the program in Python was written. 
+    
 - In keeping with PEP 8 style guide for Python Code, I have opted to make the 
 variable names as descriptive as possible. Hopefully, this will be evidenced in the comments
 found in the code. 
@@ -50,8 +53,6 @@ one comment field per individual, rather than one comment field for every indivi
 
 - The program be case insensitive and should accept "N/A" and "n/a".
 
-- ***IMPORTANT*** For the variant data field for each disorder, each variant must be entered seperated ***BY A SPACE*** not 
-a comma. This change was necessitated by the way the program in Python was written. 
 
 
 ### Justification For Use of .csv instead of .txt:
@@ -65,4 +66,5 @@ Lastly, I have included a file designated "csv-generator.py" which will convert 
 Worst case scenario: we will have an intermediary program to convert .txt to .csv. 
 
 ### Future Changes and Features:
-The program could be overhauled so that one inputs the file path as the input for a function. As it stands, users will still have to alter code individually. This could be problematic. 
+- The program could be overhauled so that one inputs the file path as the input for a function. As it stands, users will still have to alter code individually. This could be problematic. 
+- The 
