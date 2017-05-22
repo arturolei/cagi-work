@@ -1,6 +1,2 @@
 Validation passed with no errors.
-<<<<<<< HEAD
-Time and Date: 20170521-204642
-=======
-Time and Date: 20170521-170522
->>>>>>> f6c42e7d4056c07d35c6b04d25f5347c4b403d0d
+Time and Date: 20170521-212422
