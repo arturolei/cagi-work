@@ -19,6 +19,7 @@ In sets of 3:
 
 import csv
 import re
+import time
 
 '''
 INSTRUCTIONS:

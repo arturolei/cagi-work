@@ -1,0 +1,13 @@
+ERROR: Invalid P value for row/patient: P1, cell coordinates:  2-P
+ERROR: Invalid P value for row/patient: P3, cell coordinates:  2-P
+E: SD must be >=0; Patient ID: P1 Disorder:4
+ERROR: SD without P, Patient ID: P1 Disorder:6
+E: SD must be >=0; Patient ID: P3 Disorder:4
+ERROR: SD without P, Patient ID: P3 Disorder:6
+ERROR for Patient: P1 for Disorder:9 You cannot have V without P.
+ERROR for Patient: P2 for Disorder:3 You cannot have V without P.
+ERROR for Patient: P3 for Disorder:9 You cannot have V without P.
+ERROR for Patient: P3 for Disorder:11 You cannot have V without P.
+Chrom must be <23, for Patient: P1, Disorder: 2, VARIANT 29:394343:gcta:-
+ERROR: Variant NOT in acceptable format, either CHOM:POS:REF:ALT or simplified HGVS or N/A for Patient: P3, Disorder:2, Variant: chrchr
+ERROR: Variant NOT in acceptable format, either CHOM:POS:REF:ALT or simplified HGVS or N/A for Patient: P3, Disorder:6, Variant: BOOM
